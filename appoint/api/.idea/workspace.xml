@@ -2,28 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="644ba0d0-5d9d-4dd2-b092-12d7ca8690a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/src/App.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/src/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/src/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/src/react-app-env.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/src/reportWebVitals.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/src/setupTests.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../appointment-app/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +14,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="25U7f5CSU6D6DIRYASICTw24d7W" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -45,6 +35,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -55,11 +46,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1645569911241</updated>
-      <workItem from="1645569912683" duration="654000" />
+      <workItem from="1645569912683" duration="6510000" />
+      <workItem from="1645731805579" duration="660000" />
+      <workItem from="1645734353472" duration="293000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

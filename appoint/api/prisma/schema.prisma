@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,93 +7,88 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Bellow appears the Models of the database. Originally it was meant to be somewhere else buuut, life is shit
-
 model User {
-  uid        Int      @id @unique @default(autoincrement())
-  first_name String   @db.VarChar(32)
-  last_name  String   @db.VarChar(32)
-  birth_date DateTime @db.Date
+  uid        Int      @id @default(autoincrement())
+  first_name String
+  last_name  String
+  // gender      Gender
+  birth_date DateTime
   Login      Login?
   Patient    Patient?
-  Appointment Appointment?
+  Medic       Medic?
 }
 
+// enum Gender {
+//   MALE
+//   FEMALE
+//   NONBINARY
+// }
+
 model Login {
-  id       Int    @id @unique @default(autoincrement())
-  user     User   @relation(fields: [user_id], references: [uid]) // 1 to 1 on User
+  id       Int    @id @default(autoincrement())
   user_id  Int    @unique
-  email    String @unique @db.VarChar(32)
-  password String @db.VarChar(32)
+  email    String @unique
+  password String
+  user     User   @relation(fields: [user_id], references: [uid])
 }
 
 model Patient {
-  pid          Int    @id @default(autoincrement())
-  phone_number String @db.VarChar(16)
-  user         User   @relation(fields: [user_id], references: [uid])
-  user_id      Int    @unique
-
-  review Review?
+  pid          Int     @id @default(autoincrement())
+  phone_number String
+  user_id      Int     @unique
+  user         User    @relation(fields: [user_id], references: [uid])
+  review       Review?
 }
 
 model Medic {
-  mid Int @id @unique @default(autoincrement())
-  specialization String
+  mid                Int                 @id @default(autoincrement())
+  user_id      Int     @unique
+  user         User    @relation(fields: [user_id], references: [uid])
   medic_availability MedicAvailability[]
-  review             Review?
-
+  Review             Review?
 }
 
 model Schedule {
   sid         Int          @id @default(autoincrement())
-  start_time  DateTime     @db.Timestamp()
-  end_time    DateTime     @db.Timestamp()
+  start_time  DateTime
+  end_time    DateTime
   appointment Appointment?
-
 }
 
 model Appointment {
   aid         Int      @id @default(autoincrement())
-  schedule    Schedule @relation(fields: [schedule_id], references: [sid])
   schedule_id Int      @unique
-  member_id Int
-  member User @relation(fields: [member_id], references: [uid])
-  member_role Int
-
+  schedule    Schedule @relation(fields: [schedule_id], references: [sid])
 }
 
 model Review {
-  rid            Int    @id @default(autoincrement())
-  title          String @db.VarChar()
+  rid            Int     @id @default(autoincrement())
+  title          String
   score          Int
-  patient_id     Int    @unique
-  medic_id       Int    @unique
-  office_id      Int    @unique
-  response_title String @db.VarChar(32)
-  response_body  String @db.VarChar(512)
-
-  patient Patient @relation(fields: [patient_id], references: [pid])
-  medic   Medic   @relation(fields: [medic_id], references: [mid])
-  office  Office  @relation(fields: [office_id], references: [oid])
-
+  patient_id     Int     @unique
+  medic_id       Int     @unique
+  office_id      Int     @unique
+  response_title String
+  response_body  String
+  Medic          Medic   @relation(fields: [medic_id], references: [mid])
+  office         Office  @relation(fields: [office_id], references: [oid])
+  patient        Patient @relation(fields: [patient_id], references: [pid])
 }
 
 model MedicAvailability {
   maid       Int      @id @default(autoincrement())
-  start_time DateTime @db.Timestamp()
-  end_time   DateTime @db.Timestamp()
+  start_time DateTime
+  end_time   DateTime
   medic_id   Int
   medic      Medic    @relation(fields: [medic_id], references: [mid])
-
 }
 
 model Office {
   oid                 Int      @id @default(autoincrement())
   office_name         String
   office_address      String
-  office_phone_number String   @db.VarChar(16)
-  office_open         DateTime @db.Timestamp()
-  ofice_close         DateTime @db.Timestamp()
-
-  review Review?
+  office_phone_number String
+  office_open         DateTime
+  ofice_close         DateTime
+  review              Review?
 }

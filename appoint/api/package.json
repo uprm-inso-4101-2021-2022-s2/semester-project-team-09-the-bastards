@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "dev": "nodemon ./index.ts"
+  },
   "devDependencies": {
     "@types/node": "^17.0.19",
     "prisma": "^3.10.0",

@@ -34,12 +34,18 @@ app.use(express.json());
 
 
 
-
+/**
+ * Main function, contains the routes and controllers in a single place.
+ * Only exists temporarily because I still don't fully understand typescript
+ */
 async function main() {
 
     // Only select the `uid`
     const userWithUidOnly = await prisma.user.findMany({ select: { uid: true } })
 
+    /**
+     * Post a new User along with his Login  
+     */
     app.post('/user', async (req: Request, res: Response) => {
         const {first_name, last_name, birth_date, email, password} = req.body;
 
@@ -50,8 +56,8 @@ async function main() {
                 birth_date: birth_date,
                 Login: {
                     create: {
-                            email: email,
-                            password: password
+                        email: email,
+                        password: password
                     }
                 }
             }
@@ -59,10 +65,61 @@ async function main() {
         res.json(user);
     });
 
+    /**
+     * 
+     */
+    app.get('/user', async (req: Request, res: Response) => {
+        // TODO convert this get all into something that take optional query
+        // parameters
+        // const user = await prisma.user.
+    });
 
-  
-    // use `console.dir` to print nested objects
-  
+    /**
+     * 
+     */
+    app.patch('/user', async (req: Request, res: Response) => {})
+
+    /**
+     * 
+     */
+    app.get('/medic', async (req: Request, res: Response) => {})
+
+    /**
+     * 
+     */
+    app.get('/login', async (req: Request, res: Response) => {})
+
+    /**
+     * 
+     */
+    app.get('/medic_availability', async (req: Request, res: Response) => {})
+
+    /**
+     * 
+     */
+    app.get('/appointments', async (req: Request, res: Response) => {})
+
+    /**
+     * 
+     */
+    app.get('/offices', async (req: Request, res: Response) => {})
+
+    /**
+     * 
+     */
+    app.get('/patients', async (req: Request, res: Response) => {})
+
+    /**
+     * 
+     */
+    app.get('/reviews', async (req: Request, res: Response) => {})
+
+    /**
+     * 
+     */
+    app.get('/schedules', async (req: Request, res: Response) => {})
+
+
     console.dir(userWithUidOnly, { depth: null })
   
 }
@@ -78,13 +135,10 @@ main()
 .catch((e) => {
 
     throw e
-
 })
-
 .finally(async () => {
 
     await prisma.$disconnect()
-
 })
     
 

@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "appoint/api"
+		}
+	],
+	"settings": {
+		"prisma.fileWatcher": true
+	}
+}

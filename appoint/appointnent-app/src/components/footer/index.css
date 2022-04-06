@@ -1,0 +1,60 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: var(--bar);
+    color: var(--green);
+    font-family: var(--font2);
+}
+
+.footer p {
+    letter-spacing: 0.07rem;
+    font-size: 14px;
+
+}
+
+.media-container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.media svg:hover {
+    transform: scale(1.1);
+}
+
+.media svg {
+    transition: all .2s ease-in-out;
+}
+
+.media a {
+    display: contents;
+}
+
+.media-container svg {
+    color: var(--fg);
+    padding: 1rem;
+    background: var(--btn);
+    margin-left: 26px;
+    margin-right: 26px;
+    margin-top: 20px;
+    /* margin-bottom: 10px; */
+}
+
+.fa-mug-hot {
+    color: var(--orange);
+}
+
+p span {
+    padding-top: 0.7rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+p span a {
+    color: var(--fg);
+}

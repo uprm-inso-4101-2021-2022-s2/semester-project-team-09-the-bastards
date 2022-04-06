@@ -1,0 +1,56 @@
+.navbar {
+    max-height: 71px;
+    background: var(--bg);
+    height: 71px;
+}
+
+/* .navbar {
+    max-height: 71px;
+    height: 71px;
+    background: #21222A;
+    display: flex;
+    padding: 10px;
+    font-family: var(--font1);
+    color: var(--gui05);
+    justify-content: space-between;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 0;
+    align-items: center;
+}
+
+.navbar h1 {
+    color: var(--gui0D);
+    font-family: var(--font2);
+    font-weight: 700;
+    font-size: 1.641rem;
+}
+
+.navbar h1 svg {
+    color: var(--gui09);
+
+}
+
+.navbar h2 {
+    color: var(--gui09);
+    font-size: 1rem;
+}
+
+#btn {
+    background: var(--gui06);
+    border: none;
+    transition: scale ease-in 0.1s;
+    padding: 0.1rem 1.6rem 0.1rem 1.6rem;
+}
+
+#btn:hover {
+    scale: 1.1;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.coffee {
+    width: 4vh;
+    margin: 1vh;
+} */

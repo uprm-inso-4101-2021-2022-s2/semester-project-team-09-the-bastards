@@ -1,0 +1,26 @@
+.hero-container {
+    font-size: calc(10px + 2vmin);
+    background: var(--blue);
+    color: var(--bg);
+}
+
+.hero-search-thingy {
+    display: flex;
+    justify-content: center;
+    margin: 1.25rem;
+}
+
+.hero-search-thingy div input {
+    border: none;
+    background: #3D4059;
+}
+
+.search-hero-btn {
+    background: var(--green);
+    cursor: pointer;
+    outline-offset: 4px;
+    border: none;
+    /* font-size: 1.25rem; */
+    padding: 1.125rem;
+    color: #3D4059;
+}

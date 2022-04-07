@@ -2,6 +2,8 @@
     max-height: 71px;
     background: var(--bg);
     height: 71px;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
 }
 
 /* .navbar {
@@ -18,14 +20,16 @@
     padding-bottom: 0;
     align-items: center;
 }
-
+*/
 .navbar h1 {
-    color: var(--gui0D);
+    color: var(--fg);
     font-family: var(--font2);
     font-weight: 700;
     font-size: 1.641rem;
+    padding-left: 1rem;
 }
 
+/* 
 .navbar h1 svg {
     color: var(--gui09);
 

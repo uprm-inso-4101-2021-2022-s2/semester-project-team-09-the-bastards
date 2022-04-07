@@ -13,14 +13,23 @@
 .hero-search-thingy div input {
     border: none;
     background: #3D4059;
+    font-size: 1.120rem;
+    padding: 0.95rem;
+    font-weight: 600;
 }
+
+.hero-search-thingy div input::placeholder {
+    color: #696c8b;
+}
+
 
 .search-hero-btn {
     background: var(--green);
     cursor: pointer;
     outline-offset: 4px;
     border: none;
-    /* font-size: 1.25rem; */
-    padding: 1.125rem;
+    font-size: 1.25rem;
+    padding: 0.90rem;
     color: #3D4059;
+
 }

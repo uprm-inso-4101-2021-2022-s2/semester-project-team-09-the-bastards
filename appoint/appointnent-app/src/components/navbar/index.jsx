@@ -8,7 +8,7 @@ export const Navbar = ({children}) => {
     return (
         <nav className="navbar navbar-expand">
             <h1>
-            <FontAwesomeIcon icon={faHospital} />
+            <FontAwesomeIcon icon={faHospital} /> Stadtarzt
             </h1>
             {/* Special buttons */}
             {children}

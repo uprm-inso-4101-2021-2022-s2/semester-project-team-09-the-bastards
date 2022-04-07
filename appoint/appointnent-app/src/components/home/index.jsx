@@ -6,7 +6,7 @@ export const Home = () => {
     return (
         <Fragment>
             <Hero />
-            {/* <Info /> */}
+            <Info />
         </Fragment>
     )
 

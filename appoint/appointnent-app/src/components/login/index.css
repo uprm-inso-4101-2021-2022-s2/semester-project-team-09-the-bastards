@@ -1,0 +1,23 @@
+.login-container {
+    background: #C6D0E9;
+    border-radius: 14px;
+    padding: 1rem 2.3125rem 1.75rem;
+}
+
+.login-outer-container {
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.title-card {
+    font-size: 3.25rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}

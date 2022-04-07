@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import { Navbar } from './components/navbar';
 import { Footer } from './components/footer';
 import { Home } from './components/home';
+import { Login } from './components/login';
 
 import './App.css';
 
@@ -14,6 +15,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />}/>
+          <Route path='/login' element={<Login />}/>
         </Routes>
         <Footer/>
       {/* <Routes>

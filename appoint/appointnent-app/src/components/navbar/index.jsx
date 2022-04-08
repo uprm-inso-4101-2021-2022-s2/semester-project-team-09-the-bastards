@@ -5,6 +5,15 @@ import './index.css';
 
 export const Navbar = ({children}) => {
     
+    const navLinkStyles = ({ isActive }) => {
+        return {
+          fontWeight: isActive ? "bold" : "normal",
+          textDecoration: isActive ? "none" : "underline"
+        };
+      };
+
+
+
     return (
         <nav className="navbar navbar-expand">
             <h1>
@@ -12,6 +21,7 @@ export const Navbar = ({children}) => {
             </h1>
             {/* Special buttons */}
             {children}
+
         </nav>
     );
   }

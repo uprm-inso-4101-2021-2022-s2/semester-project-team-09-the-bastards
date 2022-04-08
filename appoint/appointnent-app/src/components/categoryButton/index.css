@@ -1,0 +1,20 @@
+
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 32px;
+    border-radius: 12px;
+    margin-left: 15px;
+    margin-right: 15px;
+    box-shadow: -5px 10px 20px -10px black;
+
+}
+
+.btn:hover {
+    transform: scale(1.2);
+}
+
+.id {
+    font-size: 12px;
+}

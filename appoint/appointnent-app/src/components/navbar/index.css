@@ -4,6 +4,16 @@
     height: 71px;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pull-right a {
+    color: #C6D0E9;
+}
+
+.pull-right {
+    color: #CDDBF9;
 }
 
 /* .navbar {

@@ -6,7 +6,7 @@ import { Footer } from './components/footer';
 import { Home } from './components/home';
 import { Login } from './components/login';
 import { Error } from './components/404';
-
+import { About } from './components/about';
 import './App.css';
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/login' element={<Login />}/>
+          <Route path='/about' element={<About />}/>
           <Route path="*" element={<Error/>}/>
         </Routes>
         <Footer/>

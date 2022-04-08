@@ -1,4 +1,5 @@
 import {React, useState} from 'react'
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHospital } from '@fortawesome/free-solid-svg-icons'
 import './index.css';
@@ -20,8 +21,11 @@ export const Navbar = ({children}) => {
             <FontAwesomeIcon icon={faHospital} /> Stadtarzt
             </h1>
             {/* Special buttons */}
+            
+            
+            
+            <h2 className="pull-right"><Link to="/login">Log In</Link> |{" "} <Link to="/signup">Sign Up</Link></h2>
             {children}
-
         </nav>
     );
   }

@@ -1,17 +1,55 @@
-const cities = [
-    'San Juan',
-    'Dallas',
-    'Los Angeles',
-    'Chicago',
-    'San Diego',
-    'Seatle',
-    'Miami',
-    'Baltimore',
-    'Manhattan',
-    'Houston',
-    'San Francisco'
+export const cities = [{
+        id: 1,
+        city: 'San Juan',
+        topSpecialties: [
+            'Physician',
+            'Generalist',
+            'Pediatric Doctor',
+            'Oncologist',
+            'Radiologist'
+        ]
+    },
+    {
+        id: 2,
+        city: 'Dallas',
+        topSpecialties: [
+            'Physician',
+            'Generalist'
+        ]
+    },
+    {
+        id: 3,
+        city: 'Los Angeles',
+        topSpecialties: [
+            'Physician',
+            'Generalist'
+        ]
+    },
+    {
+        id: 4,
+        city: 'Chicago',
+        topSpecialties: [
+            'Physician',
+            'Generalist'
+        ]
+    },
+
+    {
+        id: 5,
+        city: 'San Diego',
+        topSpecialties: [
+            'Physician',
+            'Generalist'
+        ]
+    },
 ];
 
+// 'Seatle',
+// 'Miami',
+// 'Baltimore',
+// 'Manhattan',
+// 'Houston',
+// 'San Francisco'
 
 
 

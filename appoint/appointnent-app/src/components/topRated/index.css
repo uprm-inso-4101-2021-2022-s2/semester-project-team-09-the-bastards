@@ -1,0 +1,34 @@
+.wrapper {
+    box-sizing: border-box;
+}
+
+
+
+.top-rated-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0%;
+    
+}
+.top-rated-paragraph {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.top-rated-main-container {
+    display: inherit;
+    width: 1200px;
+    height: 400px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-left: 10px;
+}
+
+

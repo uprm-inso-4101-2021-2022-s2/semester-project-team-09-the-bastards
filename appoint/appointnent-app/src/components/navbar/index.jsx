@@ -18,7 +18,7 @@ export const Navbar = ({children}) => {
     return (
         <nav className="navbar navbar-expand">
             <h1>
-            <FontAwesomeIcon icon={faHospital} /> Stadtarzt
+            <FontAwesomeIcon icon={faHospital} /> URHealth 
             </h1>
             {/* Special buttons */}
             

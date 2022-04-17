@@ -2,13 +2,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faTwitter} from '@fortawesome/free-brands-svg-icons'
 import './index.css';
 
+const importImg = (r) =>  {
+    return r.keys().map(r);
+  }
+const ok = importImg(require.context('./devs', false, /\.(png|jpe?g|svg)$/))
+
+
 const AboutCard = (props) => {
 
     return (
         <div className="card">
             <div className="role">{props.role}</div>
             <img 
-                src={`./devs/${props.profile}`} 
+                src={`${props.profile}`} 
                 className="card-image"
                 alt={props.nickname}
             />
@@ -33,6 +39,7 @@ export const About = () => {
         {   
             id: 1,
             name: "Angel L Garcia",
+            picName: 'angel',
             nickname: "Detective Pikachu",
             linkedIn: "http://",
             github: "https://github",
@@ -43,6 +50,7 @@ export const About = () => {
         {
             id: 2,
             name: "Alejandro",
+            picName: 'alejandro',
             nickname: "Alejo",
             linkedIn: "http://",
             github: "https://github",
@@ -52,17 +60,34 @@ export const About = () => {
         },
         {
             id: 3,
-            name: "Ruben",
+            name: "Rubén E Leoncio Cabán",
+            picName: 'ruben',
             role: "Documentation",
             about: "Knows how to express the domain better than anyone in the group",
         },
         {
             id: 4,
             name: "Noel",
+            picName: 'noel',
             role: "Scheduler",
             about: "A member of the CAHSI Asociation, always keeps taps on the projects' progress"
+        },
+        {
+            id: 5,
+            name: "Andrés Rodriguez",
+            picName: 'andres'
+
         }
     ]
+
+    ok.map( (e) => {
+        team.map( (j) => {
+            
+            if (e.includes(j.picName)) {
+                j.profile = e
+            }
+        })        
+    } )
 
     return (
         <div className="about-container">

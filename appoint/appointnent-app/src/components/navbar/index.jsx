@@ -1,11 +1,13 @@
 import {React, useState} from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHospital } from '@fortawesome/free-solid-svg-icons'
 import './index.css';
 
 export const Navbar = ({children}) => {
-    
+    const navigate = useNavigate();  
+
+
     const navLinkStyles = ({ isActive }) => {
         return {
           fontWeight: isActive ? "bold" : "normal",
@@ -13,11 +15,9 @@ export const Navbar = ({children}) => {
         };
       };
 
-
-
     return (
         <nav className="navbar navbar-expand">
-            <h1>
+            <h1 onClick={() => navigate("/")}>
             <FontAwesomeIcon icon={faHospital} /> Stadtarzt
             </h1>
             {/* Special buttons */}

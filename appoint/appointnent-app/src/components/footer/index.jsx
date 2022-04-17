@@ -9,18 +9,18 @@ export const Footer = () => {
         <footer className="footer">
             <div className="media-container">
                 <div className="media">
-                    <a href="#">
+                    <a href="https://twitter.com/elonmusk">
                         <FontAwesomeIcon icon={faTwitter} />
                     </a>
                 </div>
                 <div className="media">
-                    <a href="#">
+                    <a href="https://github.com/uprm-inso-4101-2021-2022-s2/semester-project-team-09-the-bastards">
                     <FontAwesomeIcon icon={faGithub} />
                         </a>
                     
                 </div>
                 <div className="media">
-                    <a href="#">
+                    <a href="https://www.linkedin.com/in/vancityreynolds/">
                     <FontAwesomeIcon icon={faLinkedin} />
                         </a>
                 </div>

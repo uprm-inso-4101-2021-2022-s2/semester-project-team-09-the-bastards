@@ -17,7 +17,7 @@ export const Navbar = ({children}) => {
 
     return (
         <nav className="navbar navbar-expand">
-            <h1>
+            <h1 onClick={() => navigate("/")}>
             <FontAwesomeIcon icon={faHospital} /> URHealth 
             </h1>
             {/* Special buttons */}

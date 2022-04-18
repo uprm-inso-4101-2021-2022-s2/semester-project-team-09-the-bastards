@@ -1,12 +1,33 @@
+import { useState,  useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './index.css';
 
 export const Hero = () => {
+  const wording = ['doctors', 'medics', 'physicians', 'therapists'];
+
+  const [seconds, setSeconds] = useState(0);
+  const [showHeroWording, setShowHeroWording] = useState(wording[seconds]);
+
+
+  useEffect(() => {
+    let interval = null;
+    interval = setInterval(() => {
+      setSeconds(seconds => seconds + 1);
+    }, 2500);
+    setShowHeroWording(newWord => newWord = wording[seconds]);
+    if (seconds >= wording.length) {
+      setSeconds(seconds => seconds = 0)
+    }
+    return () => clearInterval(interval);
+  }, [showHeroWording, seconds]);
+
+
+
     return (
         <div className="hero-container">
             <h1>
-                <span>Find local</span> <span id="span-thing">Doctors</span> <span>who will take your insurance</span>
+                <span>Find local</span> <span id="span-thing">{showHeroWording}</span> <span>who will attend your needs</span>
             </h1>
             <div className="hero-search-thingy">
                 <div>
@@ -27,27 +48,3 @@ export const Hero = () => {
         </div>
     )
 }
-
-{/* <div className='hero-container'>
-      <video src='/videos/video-1.mp4' autoPlay loop muted />
-      <h1>ADVENTURE AWAITS</h1>
-      <p>What are you waiting for?</p>
-      <div className='hero-btns'>
-        <Button
-          className='btns'
-          buttonStyle='btn--outline'
-          buttonSize='btn--large'
-        >
-          GET STARTED
-        </Button>
-        <Button
-          className='btns'
-          buttonStyle='btn--primary'
-          buttonSize='btn--large'
-          onClick={console.log('hey')}
-        >
-          WATCH TRAILER <i className='far fa-play-circle' />
-        </Button>
-      </div>
-    </div>
-  ); */}

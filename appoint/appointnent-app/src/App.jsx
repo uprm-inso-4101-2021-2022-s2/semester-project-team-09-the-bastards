@@ -1,25 +1,34 @@
 import {React} from 'react';
 import {Routes, Route } from 'react-router';
-import logo from './logo.svg';
 import { Navbar } from './components/navbar';
 import { Footer } from './components/footer';
 import { Home } from './components/home';
 import { Login } from './components/login';
-import {Signup } from './components/signup';
+import { Signup } from './components/signup';
 import { Error } from './components/404';
 import { About } from './components/about';
+import { Portal } from './components/portal';
+
+import { useState } from 'react';
+
 import './App.css';
 
 function App() {
+  const [token, setToken] = useState();
+
   return (
     <div className="App">
       <header className="App-header">
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path='/login' element={<Login />}/>
+          <Route path='/login' element={<Login setToken={setToken} />}/>
           <Route path='/signup' element={<Signup />}/>
           <Route path='/about' element={<About />}/>
+          {/* TESTING ONLY */}
+          <Route path='/portal' element={<Portal/>}/>
+
+
           <Route path="*" element={<Error/>}/>
         </Routes>
         <Footer/>

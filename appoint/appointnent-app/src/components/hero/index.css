@@ -16,12 +16,35 @@
     font-size: 1.120rem;
     padding: 0.95rem;
     font-weight: 600;
+    color: #dadfecd7;
 }
+
+@media screen and (max-width: 910px) {
+    .hero-search-thingy {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-search-thingy div {
+        margin: auto;
+        display: flex;
+
+    }
+
+    .hero-search-thingy div input {
+        width: 86vw;
+    }
+
+}
+
+.hero-container h1 {
+    padding: 1.25rem;
+}
+
 
 .hero-search-thingy div input::placeholder {
     color: #696c8b;
 }
-
 
 .search-hero-btn {
     background: var(--green);

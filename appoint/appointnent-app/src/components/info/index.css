@@ -1,3 +1,32 @@
 .city-search-main-container {
     display: flex;
+    justify-content: space-evenly;
+}
+
+.info {
+    background: #e6e7f7;
+    padding-left: 1.25rem;
+    font-style: 800;
+}
+
+.info-card-medic {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    margin: 2px;
+}
+
+.specialties {
+    background: rgb(140, 184, 174);
+}
+
+.info-card-medic h3 {
+    text-align: center;
+}
+
+
+.city-search-title {
+    font-size: 1.75rem;
+    padding: 1rem;
 }

@@ -1,8 +1,70 @@
 .card {
     max-width: 28rem;
+    max-height: 28rem;
+    width: 33%;
+    background-color: white;
+    border-radius: 35px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 25px;
+}
+
+.card:hover {
+    transform: scale(1.1) translate(3%, 3%);
 }
 
 .about-container {
     display: flex;
+    background: var(--blue);
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 100px;
 
+
+}
+
+.about-header-container {
+    padding: 25px;
+    background: var(--blue);
+}
+
+.about-header-title {
+    text-align: center;
+    font-size: calc(20px + 2vmin);
+    color: var(--bg);
+}
+
+.about-header-p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+
+    margin-bottom: 70px;
+}
+
+
+
+.card-image {
+    max-width: 128px;
+    max-height: 128px;
+    border-radius: 25px;
+}
+
+.about-wrapper {
+    height: 1500px;
+    overflow: hidden;
+}
+
+.dev-name {
+    margin: 0%;
+}
+
+
+.role {
+    margin: 0%;
+    text-decoration: underline solid;
+}
+
+.about-link:hover {
+    opacity: 50%;
 }

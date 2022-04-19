@@ -12,6 +12,14 @@
     --font: 'Mali';
 }
 
+.App {
+    height: 100%;
+    width: 100%;
+    margin: inherit;
+    padding: inherit;
+}
+
+
 .App-logo {
     height: 40vmin;
     pointer-events: none;
@@ -26,6 +34,8 @@
 .App-header {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
 }
 
 .App-link {

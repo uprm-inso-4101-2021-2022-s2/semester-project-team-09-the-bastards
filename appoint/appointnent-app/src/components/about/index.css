@@ -51,8 +51,7 @@
 }
 
 .about-wrapper {
-    height: 1500px;
-    overflow: hidden;
+    /* height: 100%; */
 }
 
 .dev-name {

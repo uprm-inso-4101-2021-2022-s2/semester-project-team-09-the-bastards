@@ -27,17 +27,9 @@ function App() {
           <Route path='/about' element={<About />}/>
           {/* TESTING ONLY */}
           <Route path='/portal' element={<Portal/>}/>
-
-
           <Route path="*" element={<Error/>}/>
         </Routes>
         <Footer/>
-      {/* <Routes>
-      <Navbar />
-      <Footer />
-      <Route path='/' element={<Home />} />
-        <Route path="about" element={<About />} />
-      </Routes> */}
       </header>
     </div>
   );

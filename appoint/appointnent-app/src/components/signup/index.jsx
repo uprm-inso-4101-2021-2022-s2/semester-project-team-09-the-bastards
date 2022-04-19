@@ -32,37 +32,33 @@ export const Signup = () => {
                     <form className='signup-form' action="">
                         <div className='name'>
                             <h5>Your Name Please</h5>
-                            <div>
-                            <FontAwesomeIcon icon={faUser}/>
-                            <input type="text" placeholder="Name" onChange={updateName} />
+                            <div className='input-thing'>
+                                <FontAwesomeIcon icon={faUser}/>
+                                <input className='input' type="text" placeholder="Name" onChange={updateName} />
                             </div>
                         </div>
                         <div className='email'>
                             <h5>Your Email Please</h5>
-                            <div>
-                            <FontAwesomeIcon icon={faMailBulk}/>
-                            <input type="text" placeholder="Email" onChange={updateEmail} />
+                            <div className='input-thing'>
+                                <FontAwesomeIcon icon={faMailBulk}/>
+                                <input className='input' type="text" placeholder="Email" onChange={updateEmail} />
                             </div>
                         </div>
                         <div className="password">
                             <h5>Your Password Please</h5>
-                            <div>
-                            <FontAwesomeIcon icon={faLock}/> 
-                            <input type="text" placeholder="Password" onChange={updatePassword} />
-                            <button>
-                                <FontAwesomeIcon icon={faEye} />
-                            </button>
+                            <div className='input-thing'>
+                                <FontAwesomeIcon icon={faLock}/> 
+                                <input className="input password-input" type="text" placeholder="Password" onChange={updatePassword} />
+                                <button className="show-password-btn">
+                                    <FontAwesomeIcon icon={faEye} />
+                                </button>
                             </div>
-                        
-                        
                         </div>
                         <button type='submit' className='signUpButton'>Sign Up</button>
                     </form>
                 </div>
-                    
             </div>
-                </div>
-            
-        </div>
+        </div>            
+    </div>
     )
 }

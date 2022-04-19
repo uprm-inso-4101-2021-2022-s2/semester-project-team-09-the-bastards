@@ -109,18 +109,15 @@ export const About = () => {
     return (
         <div className='about-wrapper'>
             <AboutHeader/>
-
-
             {
-                        ok.map( (e) => {
-                            team.map( (j) => {
-                                
-                                if (e.includes(j.picName)) {
-                                    j.profile = e
-                                }
-                            })        
-                        } )
-                    }
+                ok.map( (e) => {
+                    team.map( (j) => {
+                        if (e.includes(j.picName)) {
+                            j.profile = e
+                        }
+                    })        
+                })
+            }
         <div className="about-container">
             {
                 team.map((member) => (   

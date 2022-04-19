@@ -101,3 +101,14 @@ select:focus {
 .signUpButton:hover {
     cursor: pointer;
 }
+
+.bottom-sign {
+    text-align: center;
+    color: rgb(54, 64, 83);
+}
+
+.bottom-sign span a {
+    color: rgb(71, 88, 121);
+    text-decoration: none;
+
+}

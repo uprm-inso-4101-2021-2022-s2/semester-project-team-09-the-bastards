@@ -1,13 +1,25 @@
 import {React, useState} from 'react'
 import { Route, Routes } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faMailBulk, faLock, faEye } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faMailBulk, faLock, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import './index.css';
 
 export const Signup = () => {
     const [name, setName] = useState(''); 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [visibility, setVisibility] = useState('password');
+    const [eyeIcon, setEyeIcon] = useState(faEye);
+
+    const pushForVisibility = () => {
+        if (visibility === 'password') {
+            setVisibility('text');
+            setEyeIcon(faEyeSlash);
+        } else {
+            setVisibility('password');
+            setEyeIcon(faEye);
+        }
+    }
 
     const updateName = (e) => {
         setName(e.target.value);
@@ -46,12 +58,12 @@ export const Signup = () => {
                         </div>
                         <div className="password">
                             <h5>Your Password Please</h5>
-                            <div className='input-thing'>
+                            <div className="input-thing">
                                 <FontAwesomeIcon icon={faLock}/> 
-                                <input className="input password-input" type="text" placeholder="Password" onChange={updatePassword} />
-                                <button className="show-password-btn">
-                                    <FontAwesomeIcon icon={faEye} />
-                                </button>
+                                <input className="input password-input" type={visibility} placeholder="Password" onChange={updatePassword} />
+                                <div onClick={() => pushForVisibility()} className="show-password-btn">
+                                    <FontAwesomeIcon icon={eyeIcon} />
+                                </div>
                             </div>
                         </div>
                         <button type='submit' className='signUpButton'>Sign Up</button>

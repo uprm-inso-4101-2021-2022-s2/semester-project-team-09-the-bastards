@@ -1,25 +1,32 @@
-import {useRef, React, useState} from 'react'
-import PropTypes from 'prop-types';
+import { useRef, useState, useEffect } from 'react';
 import useAuth from '../../hooks/useAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMailBulk, faLock, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import './index.css';
 import axios from '../../api/axios';
+const LOGIN_URL = '../auth';
 
-const LOGIN_URL = '/auth';
 
 export const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
     const [visibility, setVisibility] = useState('password');
     const [eyeIcon, setEyeIcon] = useState(faEye);
+
     const { setAuth, persist, setPersist } = useAuth();
-    const [errorMsg, setErrorMsg] = useState('');
+    const [errMsg, setErrMsg] = useState('');
+    
     const errRef = useRef();
+    const userRef = useRef();
+
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
+
+
 
     const updatePassword = (e) => {
         setPassword(e.target.value);
@@ -41,7 +48,6 @@ export const Login = () => {
 
     const handleSubmission = async (e) => {
         e.preveventDefault();
-
         try {
             const response = await axios.post(LOGIN_URL,
                 JSON.stringify({ email, password }),
@@ -59,33 +65,40 @@ export const Login = () => {
             navigate(from, { replace: true });
         } catch (err) {
             if (!err?.response) {
-                setErrorMsg('No Server Response');
+                setErrMsg('No Server Response');
             } else if (err.response?.status === 400) {
-                setErrorMsg('Missing Username or Password');
+                setErrMsg('Missing Username or Password');
             } else if (err.response?.status === 401) {
-                setErrorMsg('Unauthorized');
+                setErrMsg('Unauthorized');
             } else {
-                setErrorMsg('Login Failed');
+                setErrMsg('Login Failed');
             }
             errRef.current.focus();
         }
     }
 
+    const togglePersist = () => {
+        setPersist(prev => !prev);
+    }
+
+    useEffect(() => {
+        localStorage.setItem("persist", persist);
+    }, [persist])
+
     return (
         <div className="login">
-            
             <div className="login-outer-container">
                 <div className="login-container">
-
                 <div className="login-inner-container">
                     <h2 className='title-card'>Welcome Back!</h2>
                     <h4>Log in to URHealth</h4>
-                    <form className='login-form' action="">
+                    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+                    <form className='login-form' onSubmit={handleSubmission}>
                         <div className='email'>
                             <h5>Your Email Please</h5>
                             <div className="input-thing">
                                 <FontAwesomeIcon icon={faMailBulk}/>
-                                <input className="input" type="text" placeholder="Email" onChange={updateEmail} required />
+                                <input className="input" type="text" placeholder="Email" onChange={updateEmail} required ref={userRef} />
                             </div>
                         </div>
                         <div className="password">
@@ -101,6 +114,15 @@ export const Login = () => {
                         
                         </div>
                         <button type='submit' className='signInButton'>Sign In</button>
+                        {/* <div className="persistCheck">
+                            <input
+                                type="checkbox"
+                                id="persist"
+                                onChange={togglePersist}
+                                checked={persist}
+                            />
+                            <label htmlFor="persist">Trust This Device</label>
+                        </div> */}
                     </form>
                     <p className="bottom-sign">
                         New user? <span>
@@ -112,8 +134,4 @@ export const Login = () => {
         </div>
     </div>
     )
-}
-
-Login.prototype = {
-    setToken: PropTypes.func.isRequired
 }

@@ -31,6 +31,7 @@ const RequireAuth = ({ allowedRoles }) => {
   );
 }
 
+
 function App() {
   const [token, setToken] = useState();
 

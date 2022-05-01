@@ -1,0 +1,96 @@
+
+
+.doctor-page-wrapper {
+    background-color: var(--blue);
+}
+
+.doctor-page-container {
+    margin-left: 25%;
+}
+
+.doctor-page-name {
+    font-size: calc(20px + 2vmin);
+    color: var(--bg);
+    margin: 0%;
+}
+
+.doctor-page-specialty {
+    margin: 0%;
+}
+
+.doctor-page-locale {
+    margin-top: 0%;
+}
+
+.recent-title {
+    font-size: 30px;
+    text-decoration: underline;
+    margin: 0%;
+}
+
+.doctor-recent-review {
+    margin-left: 25%;
+}
+
+.doctor-review-section {
+    margin-left: 25%;
+}
+
+.doctor-page-photo {
+    margin-top: 3%;
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+}
+
+.review-card {
+    width: 700px;
+    height: 10rem;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 25px;
+}
+
+.reviewer-name {
+    margin: 0%;
+}
+
+.review-score {
+    margin: 0%;
+}
+
+.review-date {
+   margin: 0%;
+}
+
+.review {
+    margin: 0%;
+    font-size: 16px;
+}
+
+.calendar-section {
+    margin-left: 25%;
+    margin-bottom: 3%;
+}
+
+.doctor-review-paragraph {
+    font-size: 16px;
+    font-size: calc(1px + 2vmin);
+    color: var(--bg);
+    margin: 0%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  

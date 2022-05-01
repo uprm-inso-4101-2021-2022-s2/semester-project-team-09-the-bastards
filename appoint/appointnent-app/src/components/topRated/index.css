@@ -24,7 +24,7 @@
 .top-rated-main-container {
     display: inherit;
     width: 1200px;
-    height: 400px;
+    height: 430px;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;

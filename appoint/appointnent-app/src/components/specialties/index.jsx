@@ -17,25 +17,29 @@ const categories = [
         id: 1,
         name: 'Generalist',
         path: 'generalist',
-        icon: faStethoscope
+        icon: faStethoscope,
+        path: 'search'
     },
     {
         id: 2,
         name: 'Pediatric Doctor',
         path:'pediatric-doctor',
-        icon: faChildren
+        icon: faChildren,
+        path: 'search'
     },
     {
         id: 3,
         name: 'Physician',
         path: 'physician',
         icon: faUserDoctor,
+        path: 'search'
     },
     {
         id: 4,
         name: 'Dentist',
         path: 'dentist',
-        icon: faTooth
+        icon: faTooth,
+        path: 'search'
     },
     {
         id: 5,

@@ -8,6 +8,7 @@ import { Login } from './components/login';
 import { Signup } from './components/signup';
 import { Error } from './components/404';
 import { About } from './components/about';
+import { Search } from './components/searchCard';
 import { Portal } from './components/portal';
 import { PersistLogin } from './components/persistLogin';
 import { useLocation, Navigate, Outlet } from "react-router-dom";
@@ -46,6 +47,7 @@ function App() {
           <Route path='/signup' element={<Signup />}/>
           <Route path='/doctorname' element={<DoctorPage/>}/>
           <Route path='/about' element={<About />}/>
+          <Route path='/categories/search' element={<Search/>}/>
           
           <Route path="*" element={<Error/>}/>
         

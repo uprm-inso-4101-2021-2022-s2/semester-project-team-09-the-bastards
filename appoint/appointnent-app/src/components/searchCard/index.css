@@ -1,0 +1,75 @@
+
+.search-wrapper {
+    background-color: var(--blue);
+}
+
+.search-container {
+    display: flex;
+    background-color: var(--blue);
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-card {
+    height: 320px;
+    width: 60%;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 25px;
+}
+
+.search-name {
+    margin: 0%;
+    font-size: 24px;
+    color: var(--bar);
+}
+
+.search-specialty {
+    margin: 0%;
+    text-decoration: underline;
+}
+
+.search-name:hover {
+    text-decoration: underline;
+}
+
+.search-calendar {
+    float: right;
+    align-items: baseline;
+}
+
+.search-card-photo {
+    width: 160px;
+    height: 160px;
+    float: left;
+    margin-right: 3%;
+}
+
+.search-card-btn {
+    background-color: var(--fg);
+    width: 200px;
+    border-radius: 120px;
+    float:unset;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: #5d579b45 2px solid;
+}
+
+.search-about {
+    position: relative;
+    top: 100px;
+    left: -200px;
+    overflow-wrap:break-word;
+    margin-top: 0%;
+}
+
+.search-address {
+    position: relative;
+    margin: 0%;
+    color: var(--bar);
+}
+
+
+

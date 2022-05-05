@@ -1,12 +1,14 @@
 .login-container,
-.signup-container {
+.signup-container,
+.booking-container {
     background: #C6D0E9;
     border-radius: 14px;
     padding: 1rem 2.3125rem 1.75rem;
 }
 
 .login-outer-container,
-.signup-outer-container {
+.signup-outer-container,
+.booking-outer-container {
     width: 100%;
     /* height: 100vh; */
     display: flex;
@@ -19,7 +21,8 @@
 }
 
 .login-form,
-.signup-form {
+.signup-form,
+.booking-form {
     display: flex;
     flex-direction: column;
 }
@@ -58,7 +61,8 @@
 }
 
 .signUpButton,
-.signInButton {
+.signInButton,
+.bookingButton {
     margin-top: 1.75rem;
     border: none;
     border-radius: 14px;
@@ -98,7 +102,8 @@ select:focus {
 
 .show-password-btn:hover,
 .signInButton:hover,
-.signUpButton:hover {
+.signUpButton:hover,
+.bookingButton:hover {
     cursor: pointer;
 }
 

@@ -1,0 +1,17 @@
+@import "../login/index.css";
+
+.booking-name {
+    font-size: 0.95rem;
+    text-decoration: underline var(--bg) 2px;
+}
+
+.booking-input-thing {
+    border-radius: 14px;
+    background-color: rgba(217, 226, 243, 0.76);
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    
+}

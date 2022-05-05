@@ -10,6 +10,7 @@ import moment from 'moment'
 
 
 
+
 const ReviewCard = (props) => {
     return (
         <div className='review-card'>
@@ -26,15 +27,19 @@ const ReviewCard = (props) => {
 
 export const DoctorPage = () => {
 
-    const [value, onChange] = useState(new Date());
+    const [value, onChange] = useState('');
     const localizer = momentLocalizer(moment);
     let navigate = useNavigate();
     moment.locale();
 
-    const handleChange = () => {
+    const [selected, setSelected] = useState();
+    const [date, setDate] = useState();
 
-        navigate('/' ,{replace: true});
+    const handleChange = (event) => {
+        navigate('/appointment' ,{state: {date: moment(event.start).format('MMMM Do YYYY [at] h:mma')}},{replace: true});
     }
+
+
 
     {/*Dummy Data */}
     const testReviews = [

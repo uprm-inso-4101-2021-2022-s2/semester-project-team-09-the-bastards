@@ -10,6 +10,7 @@ import { Error } from './components/404';
 import { About } from './components/about';
 import { Search } from './components/searchCard';
 import { Portal } from './components/portal';
+import { BookingForm } from './components/bookingForm';
 import { PersistLogin } from './components/persistLogin';
 import { useLocation, Navigate, Outlet } from "react-router-dom";
 import useAuth from './hooks/useAuth';
@@ -48,7 +49,7 @@ function App() {
           <Route path='/doctorname' element={<DoctorPage/>}/>
           <Route path='/about' element={<About />}/>
           <Route path='/categories/search' element={<Search/>}/>
-          
+          <Route path='/appointment' element={<BookingForm/>}/>
           <Route path="*" element={<Error/>}/>
         
           {/* we want to protect these routes */}

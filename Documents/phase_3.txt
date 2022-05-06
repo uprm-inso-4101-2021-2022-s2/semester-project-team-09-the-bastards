@@ -1,0 +1,290 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                         EVALUATION GUIDELINES
+
+                          Marko Schütz-Schmuck
+                        ━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+
+These guidelines should be used to evaluate each team's submission. The
+whole project has now culminated, so we do want to see some type of
+completeness. In terms of features, completeness means that there is a
+minimal collection of features that make the application
+viable. Completeness also refers to the other activities on the project
+(domain description, requirements prescription, software architecture,
+design, testing, …). For example, does the team document the
+requirements of the features that are implemented? Are the phenomena
+from the domain that the requirements refer to fully described? Does the
+team use automated tests for their features? The guidelines and examples
+are more detailed than what would easily fit into the format of rubrics,
+so the guidelines are stated separately and the rubrics then are quite
+generic.
+
+• Changes to the previous submission must be clearly visible. Use a
+  different background color, change bars in the page margin, or other
+  ways to clearly indicate the changes.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   performance       unsatisfactory  satisfactory  proficient   exemplary
+   indicator
+  ──────────────────────────────────────────────────────────────────────────────
+   Follows the       Does not        Follows the   Follows the  Follows exactly
+   guidelines        follow the      guidelines    guidelines   the guidelines.
+   concerning        guidelines      a little.     mostly.
+   change tracking.  or missing.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• The log book gives an overview of the changes (but not the full
+  changed content) since the last submission.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   performance       unsatisfactory  satisfactory  proficient   exemplary
+   indicator
+  ──────────────────────────────────────────────────────────────────────────────
+   Follows the       Does not        Follows the   Follows the  Follows exactly
+   guidelines        follow the      guidelines    guidelines   the guidelines.
+   concerning        guidelines      a little.     mostly.
+   change overview.  or missing.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• The actual changes, new developments, etc are integrated into the
+  overall document.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   performance     unsatisfactory  satisfactory  proficient   exemplary
+   indicator
+  ────────────────────────────────────────────────────────────────────────────
+   Follows the     Does not        Follows the   Follows the  Follows exactly
+   guidelines      follow the      guidelines    guidelines   the guidelines.
+   concerning      guidelines      a little.     mostly.
+   integration of  or missing.
+   changes.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• All the criteria where the previous submission did not follow the
+  guidelines have been improved.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   performance     unsatisfactory  satisfactory  proficient   exemplary
+   indicator
+  ────────────────────────────────────────────────────────────────────────────
+   Follows the     Does not        Follows the   Follows the  Follows exactly
+   guidelines      follow the      guidelines    guidelines   the guidelines.
+   concerning      guidelines      a little.     mostly.
+   improvement of  or missing.
+   criteria.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Any additions and changes follow the guidelines already established
+  for the previous submissions.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   performance   unsatisfactory  satisfactory  proficient   exemplary
+   indicator
+  ──────────────────────────────────────────────────────────────────────────
+   Follows the   Does not        Follows the   Follows the  Follows exactly
+   guidelines    follow the      guidelines    guidelines   the guidelines.
+   concerning    guidelines      a little.     mostly.
+   addition of   or missing.
+   new content.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Completeness of the implementation: there is at least a minimal
+  collection of completed features that are implemented end-to-end and
+  that have a high value to the users, making a viable product. The
+  completion of the feature is evidenced by passing
+  acceptance/end-to-end tests.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   performance   unsatisfactory  satisfactory  proficient   exemplary
+   indicator
+  ──────────────────────────────────────────────────────────────────────────
+   Follows the   Does not        Follows the   Follows the  Follows exactly
+   guidelines    follow the      guidelines    guidelines   the guidelines.
+   concerning    guidelines      a little.     mostly.
+   complete and  or missing.
+   evidenced,
+   valuable
+   features.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Completeness of the other development phases: domain description,
+  requirements prescription, design, … For example, requirements for all
+  the features that have been implemented are also documented. All the
+  terms that are used to formulate the requirements are clearly defined
+  in a terminology, …
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   performance      unsatisfactory  satisfactory  proficient   exemplary
+   indicator
+  ─────────────────────────────────────────────────────────────────────────────
+   Follows the      Does not        Follows the   Follows the  Follows exactly
+   guidelines       follow the      guidelines    guidelines   the guidelines.
+   concerning       guidelines      a little.     mostly.
+   completeness     or missing.
+   on all phases
+   of development.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Application of topics, techniques, tools, methods, … from the
+  lectures:
+  • domain engineering and domain facets
+    • stakeholders
+
+      The team identifies and describes (domain and requirements)
+      stakeholder groups that are relevant for the project.
+
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       performance     unsatisfactory  satisfactory  proficient   exemplary
+       indicator
+      ────────────────────────────────────────────────────────────────────────────
+       Follows the     Does not        Follows the   Follows the  Follows exactly
+       guidelines      follow the      guidelines    guidelines   the guidelines.
+       on stakeholder  guidelines      a little.     mostly.
+       identification  or missing.
+       and
+       documentation.
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    • personas
+
+      The team has developed personas that are detailed beyond merely
+      their user-stories, so the persona really comes alive.
+
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       performance     unsatisfactory  satisfactory  proficient   exemplary
+       indicator
+      ────────────────────────────────────────────────────────────────────────────
+       Follows the     Does not        Follows the   Follows the  Follows exactly
+       guidelines      follow the      guidelines    guidelines   the guidelines.
+       on developing   guidelines      a little.     mostly.
+       and describing  or missing.
+       personas.
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    • domain facets
+
+      The team has explored relevant domain facets. For example, in a
+      project concerned with supermarket checkout a team might want to
+      talk about scanning devices (support technology). But that team
+      might not have anything to say concerning the scripts
+      facet. Relevance needs to be considered in the assessment. Teams
+      should demonstrate that they can judge relevance and not create
+      filler.
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       performance      unsatisfactory  satisfactory  proficient   exemplary
+       indicator
+      ─────────────────────────────────────────────────────────────────────────────
+       Follows the      Does not        Follows the   Follows the  Follows exactly
+       guidelines       follow the      guidelines    guidelines   the guidelines.
+       on applying      guidelines      a little.     mostly.
+       and documenting  or missing.
+       relevant domain
+       facets.
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    • business processes
+
+      The team describes at least one relevant and substantial business
+      process from the domain for each stakeholder group.
+
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       performance    unsatisfactory  satisfactory  proficient   exemplary
+       indicator
+      ───────────────────────────────────────────────────────────────────────────
+       Follows the    Does not        Follows the   Follows the  Follows exactly
+       guidelines     follow the      guidelines    guidelines   the guidelines.
+       on describing  guidelines      a little.     mostly.
+       relevant       or missing.
+       business
+       processes.
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  • Petri nets
+
+    The team uses Petri nets (place transition nets) to model competing
+    processes that access common resources. It's not necessary to have a
+    complete model but we want to see at least some are competing
+    activities.
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     performance  unsatisfactory  satisfactory  proficient   exemplary
+     indicator
+    ─────────────────────────────────────────────────────────────────────────
+     Follows the  Does not        Follows the   Follows the  Follows exactly
+     guidelines   follow the      guidelines    guidelines   the guidelines.
+     on modeling  guidelines      a little.     mostly.
+     competing    or missing.
+     processes
+     with Petri
+     nets.
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  • requirements
+    • domain requirements
+
+      The team identifies domain requirements from domain
+      properties. For example, in a project concerned with libraries,
+      books, borrowing, … there is a domain property that every book has
+      an owner. When the team then moves on to determine requirements
+      and the focus is only on libraries (not e.g. the books a patron
+      might otherwise own), we get a domain requirement: the
+      system-to-be must associate with each book exactly one library as
+      the owning library.
+
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       performance     unsatisfactory  satisfactory  proficient   exemplary
+       indicator
+      ────────────────────────────────────────────────────────────────────────────
+       Follows the     Does not        Follows the   Follows the  Follows exactly
+       guidelines      follow the      guidelines    guidelines   the guidelines.
+       on formulating  guidelines      a little.     mostly.
+       domain          or missing.
+       requirements
+       connected to
+       domain
+       properties.
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    • interface requirements
+
+      The team analyzes and documents the shared data initialization and
+      update requirements, the man-machine and the machine-machine
+      dialog requirements, and the physiological requirements.
+
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       performance     unsatisfactory  satisfactory  proficient   exemplary
+       indicator
+      ────────────────────────────────────────────────────────────────────────────
+       Follows the     Does not        Follows the   Follows the  Follows exactly
+       guidelines      follow the      guidelines    guidelines   the guidelines.
+       on formulating  guidelines      a little.     mostly.
+       interface       or missing.
+       requirements.
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    • machine requirements
+
+      The team identifies and documents relevant machine requirements
+      (performance, availability, accessibility,…).
+
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       performance     unsatisfactory  satisfactory  proficient   exemplary
+       indicator
+      ────────────────────────────────────────────────────────────────────────────
+       Follows the     Does not        Follows the   Follows the  Follows exactly
+       guidelines      follow the      guidelines    guidelines   the guidelines.
+       on formulating  guidelines      a little.     mostly.
+       machine         or missing.
+       requirements
+       applying
+       relevant
+       machine
+       requirements
+       facets.
+      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  • software design
+
+    The team analyzes the requirements and identifies and documents
+    components that collaborate to satisfy the requirements. There is at
+    least one major business process that the team uses as a scenario to
+    validate the design.
+
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     performance    unsatisfactory  satisfactory  proficient   exemplary
+     indicator
+    ───────────────────────────────────────────────────────────────────────────
+     Follows the    Does not        Follows the   Follows the  Follows exactly
+     guidelines     follow the      guidelines    guidelines   the guidelines.
+     on developing  guidelines      a little.     mostly.
+     a software     or missing.
+     architecture
+     and design.
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  • risks not included: too late before submission

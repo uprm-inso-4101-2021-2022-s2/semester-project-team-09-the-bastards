@@ -1,3 +1,6 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -7,88 +10,143 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// User profile information, the person itself basically
 model User {
-  uid        Int      @id @default(autoincrement())
+  uid        Int       @id @default(autoincrement())
   first_name String
   last_name  String
-  // gender      Gender
   birth_date DateTime
   Login      Login?
-  Patient    Patient?
-  Medic       Medic?
+  Comment    Comment[]
+
+  Patient Patient[]
+  Post    Post[]
+  Profile Profile?
+  Medic   Medic[]
+  @@map("users")
 }
 
-// enum Gender {
-//   MALE
-//   FEMALE
-//   NONBINARY
-// }
-
+// Controls the credentials of a user
 model Login {
-  id       Int    @id @default(autoincrement())
-  user_id  Int    @unique
-  email    String @unique
-  password String
-  user     User   @relation(fields: [user_id], references: [uid])
+  id       Int     @id @default(autoincrement())
+  user_id  Int     @unique
+  email    String  @unique
+  password String?
+  user     User    @relation(fields: [user_id], references: [uid])
+  @@map("logins")
 }
 
 model Patient {
-  pid          Int     @id @default(autoincrement())
-  phone_number String
-  user_id      Int     @unique
-  user         User    @relation(fields: [user_id], references: [uid])
-  review       Review?
+  pid     Int  @id @default(autoincrement())
+  user_id Int  @unique
+  user    User @relation(fields: [user_id], references: [uid])
+
+  @@map("patients")
+}
+
+model Office {
+  oid         Int        @id @default(autoincrement())
+  office_name String
+  address     Address    @relation(fields: [adressAid], references: [aid])
+  open_time   DateTime[]
+  close_time  DateTime[]
+  adressAid   Int
+  Post        Post[]
+  Schedule    Schedule[]
+
+  @@map("offices")
+}
+
+model Address {
+  aid     Int      @id @default(autoincrement())
+  street  String
+  city    String
+  state   String
+  zipcode String
+  Office  Office[]
+
+  @@map("adresses")
 }
 
 model Medic {
-  mid                Int                 @id @default(autoincrement())
-  user_id      Int     @unique
-  user         User    @relation(fields: [user_id], references: [uid])
-  medic_availability MedicAvailability[]
-  Review             Review?
+  mid     Int    @id @default(autoincrement())
+  user    User   @relation(fields: [userUid], references: [uid])
+  liscense String
+  specialty String
+  experience Int
+  description String
+  Post    Post[]
+  userUid Int
+
+  @@map("medics")
 }
 
 model Schedule {
-  sid         Int          @id @default(autoincrement())
-  start_time  DateTime
-  end_time    DateTime
-  appointment Appointment?
+  sid         Int           @id @default(autoincrement())
+  Appointment Appointment[]
+  location    Office        @relation(fields: [officeOid], references: [oid])
+  officeOid   Int
+
+  @@map("schedules")
 }
 
 model Appointment {
   aid         Int      @id @default(autoincrement())
-  schedule_id Int      @unique
-  schedule    Schedule @relation(fields: [schedule_id], references: [sid])
+  schedule    Schedule @relation(fields: [scheduleSid], references: [sid])
+  scheduleSid Int
+
+  @@map("appointments")
 }
 
-model Review {
-  rid            Int     @id @default(autoincrement())
-  title          String
-  score          Int
-  patient_id     Int     @unique
-  medic_id       Int     @unique
-  office_id      Int     @unique
-  response_title String
-  response_body  String
-  Medic          Medic   @relation(fields: [medic_id], references: [mid])
-  office         Office  @relation(fields: [office_id], references: [oid])
-  patient        Patient @relation(fields: [patient_id], references: [pid])
+// Main Post thingy
+model Post {
+  rid       Int       @id @default(autoincrement())
+  title     String    @db.VarChar(255)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  score     Int
+  author    User      @relation(fields: [userUid], references: [uid])
+  to_medic  Medic     @relation(fields: [medicMid], references: [mid])
+  to_office Office    @relation(fields: [officeOid], references: [oid])
+  comments  Comment[]
+
+  userUid   Int
+  medicMid  Int
+  officeOid Int
+  @@map("posts")
 }
 
-model MedicAvailability {
-  maid       Int      @id @default(autoincrement())
-  start_time DateTime
-  end_time   DateTime
-  medic_id   Int
-  medic      Medic    @relation(fields: [medic_id], references: [mid])
+model Profile {
+  id      Int     @id @default(autoincrement())
+  bio     String?
+  user    User    @relation(fields: [userUid], references: [uid])
+  userUid Int     @unique
+
+  @@map("profiles")
 }
 
-model Office {
-  oid                 Int      @id @default(autoincrement())
-  office_name         String
-  office_address      String
-  office_phone_number String
-  office_open         DateTime
-  ofice_close         DateTime
-  review              Review?
+model Comment {
+  cid             Int       @id @default(autoincrement())
+  text            String
+  date            DateTime
+  author          User      @relation(fields: [userUid], references: [uid])
+  replies         Comment[] @relation("replies")
+  repliesRelation Comment[] @relation("replies")
+
+  replying Comment? @relation("reply")
+  replyer  Comment  @relation("reply", fields: [replyerId], references: [cid])
+
+  Post Post? @relation(fields: [PostRid], references: [rid])
+
+  replyerId Int  @unique
+  PostRid   Int?
+  userUid   Int
+  @@map("comments")
 }
+
+
+// model MedicalCategory {
+//   catid Int @id @default(autoincrement()) @map("category_id")
+//   name String
+//   @@map("medical_categories")
+// }

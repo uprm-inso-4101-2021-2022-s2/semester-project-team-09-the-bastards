@@ -153,12 +153,28 @@ router.post('/posts/:id/comments', express.json(), async (req, res, next) => {
         text,
         replying_to,
         author,
+        post_id
     } = req.body
 
     const comment = await prisma.comment.create({
-
-    })
-
+        data: {
+            text: text,
+            replyingToId: replying_to,
+            author: author,
+            PostRid: post_id,
+        },
+        select: {
+            cid: true,
+            data: true
+        }
+    }).catch((error) => {
+        res.status(500);
+        res.json(error)
+    });
+    res.status(200).json({
+        ...comment,
+        ...req.body
+    });
 });
 
 // Post new Medic
@@ -166,30 +182,103 @@ router.post(['/medics'], async (req, res, next) => {
     const {
         user_id,
         specialty,
+        description,
         experience,
         liscense
     } = req.body;
-    // const user =  await prisma.medics.create({
-    //     data: {
 
-
-    //         last_name : last_name,
-    //         birth_date: birth_date,
-    //         userUid: uid
-    //         }
-    //     }
-    // });
-    res.json(user);
+    const medic = await prisma.medic.create({
+        data: {
+            description: description,
+            liscense: liscense,
+            specialty: specialty,
+            userUid: user_id,
+            experience: experience
+        },
+        select: {
+            cid: true,
+            data: true
+        }
+    }).catch((error) => {
+        res.status(500);
+        res.json(error)
+    });
+    res.status(200).json({
+        ...medic,
+        ...req.body
+    });
 });
 
 
 // Gets all medics
 router.get(['/medics', '/medics/:id'], async (req, res, next) => {
+    let {
+        id,
+        offset,
+        limit
+    } = req.query;
 
-    res.send({
-        message: `This is the medic side 🚀 ${req.query.id || 'bruj'}`
+    if (id == undefined) {
+        limit = limit || 20
+        offset = offset || 0
+    }
+    const medic = await prisma.medic.findMany({
+        take: limit.at,
+        skip: offset,
+        select: {
+            uid: true,
+            first_name: true,
+            last_name: true
+        }
     });
+    medic.map((med) => {
+        med.url = `https://urhealth-api.herokuapp.com/api/medics?=${med.uid}`
+    });
+    res.status(200).json(req.body)
+});
 
+
+router.get('/users', express.json(), async (req, res, next) => {
+    let {
+        id,
+        offset,
+        limit
+    } = req.query;
+
+    if (id === undefined) {
+        limit = limit || 20
+        offset = offset || 0
+        // get all users
+        const users = await prisma.user.findMany({
+            take: limit,
+            skip: offset,
+            select: {
+                uid: true,
+                first_name: true,
+                last_name: true
+            }
+        })
+        users.map((user) => {
+            user.url = `https://urhealth-api.herokuapp.com/api/users?=${user.uid}`
+        })
+        res.json(users)
+    } else {
+        const user = await prisma.user.findFirst({
+            where: {
+                uid: parseInt(id)
+            },
+            select: {
+                first_name: true,
+                last_name: true,
+                Login: {
+                    select: {
+                        email: true
+                    }
+                }
+            }
+        });
+        res.status(200).json(req.body)
+    }
 });
 
 

@@ -1,0 +1,149 @@
+body {
+    overflow-x: hidden;
+}
+
+.portal-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.portal-side-nav {
+    position: fixed;
+    width: 300px;
+    background: rgb(197, 171, 214);
+    overflow: hidden;
+    height: 100%;
+    transition: 0.5s;
+
+}
+
+.portal-inner-side-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    top: 4.45rem;
+}
+
+
+.portal-inner-side-nav li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    flex-direction: row;
+    display: flex;
+    margin-bottom: 2.25rem;
+    padding: 1rem;
+    border-radius: 2px;
+}
+
+.portal-inner-side-nav li:hover {
+    background: rgb(163, 131, 184);
+}
+
+.portal-inner-side-nav li:nth-child(1):hover {
+    background: rgb(153, 121, 173);
+}
+
+.portal-inner-side-nav li:first-child {
+    margin-top: -3rem;
+    margin-bottom: 3.25rem;
+    background: rgb(153, 121, 173);
+}
+
+.portal-inner-side-nav li svg {
+    position: relative;
+    display: block;
+    min-width: 30px;
+    height: 30px;
+    line-height: 60px;
+    text-align: center;
+    margin-right: 24px;
+    color: rgb(81, 60, 95);
+}
+
+.portal-inner-side-nav li span {
+    color: rgb(81, 60, 95);
+    padding: 0 10px;
+    white-space: nowrap;
+}
+
+
+.main-portal-thing {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #f5f5f5;
+    transition: 0.5s;
+}
+
+.main-portal-thing .portal-bar {
+    width: 100%;
+    display: flex;
+    background: rgb(232, 229, 240);
+    align-items: center;
+}
+
+.toggle {
+    position: relative;
+    min-width: 60px;
+    min-height: 60px;
+    color: rgb(81, 60, 95);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(201, 196, 230);
+}
+
+.search {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.search input {
+    width: 75%;
+    height: 40px;
+    border-radius: 4px;
+    padding: 5px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.user-thing {
+    position: relative;
+    /* min-width: 40px; */
+    /* width: 40px; */
+    /* height: 40px; */
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.sub-col div input {
+    width: 45%;
+    height: 40px;
+    border-radius: 4px;
+    padding: 5px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.sub-col div {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-col div textarea {
+    width: 400px;
+    height: 100px;
+    border-radius: 4px;
+    padding: 5px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}

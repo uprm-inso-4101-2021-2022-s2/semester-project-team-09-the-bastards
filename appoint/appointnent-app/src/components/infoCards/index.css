@@ -15,6 +15,7 @@
 .info-card {
     background: white;
     width: 300px;
+    height: 375px;
     display: inline-block;
     margin: auto;
     margin-left: 20px;

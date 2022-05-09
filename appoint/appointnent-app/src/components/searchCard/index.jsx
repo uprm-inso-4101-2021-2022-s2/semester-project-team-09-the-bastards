@@ -2,7 +2,7 @@
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
 import './index.css';
-import test from '../doctorPage/testPhoto/test.png';
+import test from '../topRated/testPhotos/test2.jpg';
 import { Calendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -16,20 +16,20 @@ const SearchCard = (props) => {
     const appointments = [
         {
             title: '10:00',
-            start: new Date('2022/05/05 10:00:00'),
-            end: new Date('2022/05/05 11:00:00'),
+            start: new Date('2022/05/06 10:00:00'),
+            end: new Date('2022/05/06 11:00:00'),
         },
         {
             title: '11:00',
-            start: new Date('2022/05/05 11:00:00'),
-            end: new Date('2022/05/05 12:00:00'),
+            start: new Date('2022/05/06 11:00:00'),
+            end: new Date('2022/05/06 12:00:00'),
 
         },
         {
             title: '12:00',
-            start: new Date('2022/05/05 12:00:00'),
-            end: new Date('2022/05/05 13:00:00'),
-        }
+            start: new Date('2022/05/06 12:00:00'),
+            end: new Date('2022/05/06 13:00:00'),
+        },
     ]
 
     return (
@@ -68,12 +68,12 @@ const SearchCard = (props) => {
 export const Search = () => {
     const searchResults = [
         {   
-            id: 1,
-            name: "Test Man",
-            specialty: "Dentist",
-            address: '6V65+9J5, PR-108, Mayagüez, 00682',
-            about: "Accepting new patients now! In the industry for more than 20 years!",
-            averageScore: 4.5
+                name : "Miguel Lopez",
+                specialty : "Physician",
+                address : "25, 00730, 129 Calle Villa, Ponce, 00730",
+                review : "Great at what he does, always shows that he cares about his patients.",
+                averageScore : 4.8,
+                photo : "test2"
         },
         {
             id: 2,

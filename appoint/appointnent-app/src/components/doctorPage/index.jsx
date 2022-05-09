@@ -1,6 +1,6 @@
 import './index.css'
 import './calendar.css'
-import test from './testPhoto/test.png'
+import test from '../topRated/testPhotos/test2.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
@@ -84,34 +84,159 @@ export const DoctorPage = () => {
     const appointments = [
         {
             title: '10:00',
-            start: new Date('2022/05/05 10:00:00'),
-            end: new Date('2022/05/05 11:00:00'),
+            start: new Date('2022/05/06 10:00:00'),
+            end: new Date('2022/05/06 11:00:00'),
         },
         {
             title: '11:00',
-            start: new Date('2022/05/05 11:00:00'),
-            end: new Date('2022/05/05 12:00:00'),
+            start: new Date('2022/05/06 11:00:00'),
+            end: new Date('2022/05/06 12:00:00'),
 
         },
         {
             title: '12:00',
-            start: new Date('2022/05/05 12:00:00'),
-            end: new Date('2022/05/05 13:00:00'),
+            start: new Date('2022/05/06 12:00:00'),
+            end: new Date('2022/05/06 13:00:00'),
         },
         {
             title: '13:00',
-            start: new Date('2022/05/05 13:00:00'),
-            end: new Date('2022/05/05 14:00:00'),
-        }
+            start: new Date('2022/05/06 13:00:00'),
+            end: new Date('2022/05/06 14:00:00'),
+        },
+        {
+            title: '14:00',
+            start: new Date('2022/05/06 14:00:00'),
+            end: new Date('2022/05/06 15:00:00'),
+        },
+        {
+            title: '15:00',
+            start: new Date('2022/05/06 15:00:00'),
+            end: new Date('2022/05/06 16:00:00'),
+        },
+        {
+            title: '16:00',
+            start: new Date('2022/05/06 16:00:00'),
+            end: new Date('2022/05/06 17:00:00'),
+        },
+        {
+            title: '10:00',
+            start: new Date('2022/05/09 10:00:00'),
+            end: new Date('2022/05/09 11:00:00'),
+        },
+        {
+            title: '11:00',
+            start: new Date('2022/05/09 11:00:00'),
+            end: new Date('2022/05/09 12:00:00'),
+
+        },
+        {
+            title: '12:00',
+            start: new Date('2022/05/09 12:00:00'),
+            end: new Date('2022/05/09 13:00:00'),
+        },
+        {
+            title: '13:00',
+            start: new Date('2022/05/09 13:00:00'),
+            end: new Date('2022/05/09 14:00:00'),
+        },
+        {
+            title: '14:00',
+            start: new Date('2022/05/09 14:00:00'),
+            end: new Date('2022/05/09 15:00:00'),
+        },
+        {
+            title: '15:00',
+            start: new Date('2022/05/09 15:00:00'),
+            end: new Date('2022/05/09 16:00:00'),
+        },
+        {
+            title: '16:00',
+            start: new Date('2022/05/09 16:00:00'),
+            end: new Date('2022/05/09 17:00:00'),
+        },
+        {
+            title: '10:00',
+            start: new Date('2022/05/10 10:00:00'),
+            end: new Date('2022/05/10 11:00:00'),
+        },
+        {
+            title: '11:00',
+            start: new Date('2022/05/10 11:00:00'),
+            end: new Date('2022/05/10 12:00:00'),
+
+        },
+        {
+            title: '12:00',
+            start: new Date('2022/05/10 12:00:00'),
+            end: new Date('2022/05/10 13:00:00'),
+        },
+        {
+            title: '13:00',
+            start: new Date('2022/05/10 13:00:00'),
+            end: new Date('2022/05/10 14:00:00'),
+        },
+        {
+            title: '14:00',
+            start: new Date('2022/05/10 14:00:00'),
+            end: new Date('2022/05/10 15:00:00'),
+        },
+        {
+            title: '15:00',
+            start: new Date('2022/05/10 15:00:00'),
+            end: new Date('2022/05/10 16:00:00'),
+        },
+        {
+            title: '16:00',
+            start: new Date('2022/05/10 16:00:00'),
+            end: new Date('2022/05/10 17:00:00'),
+        },
+        {
+            title: '10:00',
+            start: new Date('2022/05/11 10:00:00'),
+            end: new Date('2022/05/11 11:00:00'),
+        },
+        {
+            title: '11:00',
+            start: new Date('2022/05/11 11:00:00'),
+            end: new Date('2022/05/11 12:00:00'),
+
+        },
+        {
+            title: '12:00',
+            start: new Date('2022/05/11 12:00:00'),
+            end: new Date('2022/05/11 13:00:00'),
+        },
+        {
+            title: '13:00',
+            start: new Date('2022/05/11 13:00:00'),
+            end: new Date('2022/05/11 14:00:00'),
+        },
+        {
+            title: '14:00',
+            start: new Date('2022/05/11 14:00:00'),
+            end: new Date('2022/05/11 15:00:00'),
+        },
+        {
+            title: '15:00',
+            start: new Date('2022/05/11 15:00:00'),
+            end: new Date('2022/05/11 16:00:00'),
+        },
+        {
+            title: '16:00',
+            start: new Date('2022/05/11 16:00:00'),
+            end: new Date('2022/05/11 17:00:00'),
+        },
+        
+
     ]
 
     return (
         <div className='doctor-page-wrapper'>
             <div className='doctor-page-container'>
                 <img src={test} className='doctor-page-photo'/>
-                <h1 className='doctor-page-name'>Adrian Irizarry</h1>
-                <p className='doctor-page-specialty'>Dentist</p>
-                <p className='doctor-page-locale'>San German, Puerto Rico</p>
+                <h1 className='doctor-page-name'>Miguel Lopez</h1>
+                <p className='doctor-page-specialty'>Physician</p>
+                <p className='doctor-page-locale'>Ponce, Puerto Rico</p>
             </div>
             <div className='calendar-section'>
                 <h2>Make an Appointment!</h2>

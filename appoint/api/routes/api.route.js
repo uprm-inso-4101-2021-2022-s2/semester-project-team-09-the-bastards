@@ -5,6 +5,12 @@ const express = require('express')
 const router = require('express').Router();
 const prisma = new PrismaClient()
 const bcrypt = require('bcrypt')
+const {
+    parseISO,
+    format,
+    compareAsc
+} = require('date-fns')
+
 
 router.get('/', async (req, res, next) => {
     res.send({
@@ -27,12 +33,12 @@ router.post('/users', express.json(), async (req, res, next) => {
         email,
         password
     } = req.body;
-    bcrypt.hash(data.password, 10, async (err, hash) => {
+    bcrypt.hash(password, 10, async (err, hash) => {
         const user = await prisma.user.create({
             data: {
                 first_name: first_name,
                 last_name: last_name,
-                birth_date: birth_date,
+                birth_date: parseISO(birth_date),
                 Login: {
                     create: {
                         email: email,
@@ -66,7 +72,7 @@ router.get('/users', express.json(), async (req, res, next) => {
             }
         })
         users.map((user) => {
-            user.url = `https://urhealth-api.herokuapp.com/api/users?=${user.uid}`
+            user.url = `https://urhealth-api.herokuapp.com/api/users?id=${user.uid}`
         })
         res.json(users)
     } else {
@@ -84,7 +90,7 @@ router.get('/users', express.json(), async (req, res, next) => {
                 }
             }
         });
-        res.status(200).json(req.body)
+        res.status(200).json(user)
     }
 });
 
@@ -104,16 +110,18 @@ router.post('/offices/address', express.json(), async (req, res, next) => {
             street: street,
             zipcode: zipcode,
             state: state
-
         },
         select: {
             aid: true
         }
+    }).catch((error) => {
+        res.status(500);
+        res.json(error);
     });
     res.status(200).json({
         ...addr,
         ...req.body
-    })
+    });
 });
 
 // Create Post
@@ -140,7 +148,7 @@ router.post('/posts', express.json(), async (req, res, next) => {
         }
     }).catch((error) => {
         res.status(500);
-        res.json(error)
+        res.json(error);
     });
     res.status(200).json({
         ...post,
@@ -178,36 +186,80 @@ router.post('/posts/:id/comments', express.json(), async (req, res, next) => {
 });
 
 // Post new Medic
-router.post(['/medics'], async (req, res, next) => {
+router.post('/medics', express.json(), async (req, res, next) => {
     const {
-        user_id,
+        user,
         specialty,
         description,
         experience,
         liscense
     } = req.body;
+    console.log(typeof user)
+    if (typeof user === 'object') {
+        const {
+            first_name,
+            last_name,
+            birth_date,
+            email,
+            password
+        } = user;
+        bcrypt.hash(password, 10, async (err, hash) => {
+            const medic = await prisma.medic.create({
+                data: {
+                    description: description,
+                    liscense: liscense,
+                    specialty: specialty,
+                    experience: parseInt(experience),
+                    User: {
+                        create: {
+                            first_name: first_name,
+                            last_name: last_name,
+                            birth_date: parseISO(birth_date),
+                            Login: {
+                                create: {
+                                    email: email,
+                                    password: hash
+                                }
+                            }
+                        }
+                    }
+                },
+                select: {
+                    mid: true,
+                    User: {
+                        select: {
+                            uid: true
+                        }
+                    }
+                }
+            });
+            res.status(200).json({
+                ...medic,
+                ...req.body
+            });
+        });
 
-    const medic = await prisma.medic.create({
-        data: {
-            description: description,
-            liscense: liscense,
-            specialty: specialty,
-            userUid: user_id,
-            experience: experience
-        },
-        select: {
-            cid: true,
-            data: true
-        }
-    }).catch((error) => {
-        res.status(500);
-        res.json(error)
-    });
-    res.status(200).json({
-        ...medic,
-        ...req.body
-    });
+    } else if (typeof user === 'number') {
+        const medic = await prisma.medic.create({
+            data: {
+                description: description,
+                liscense: liscense,
+                specialty: specialty,
+                userUid: user,
+                experience: parseInt(experience)
+            },
+            select: {
+                mid: true,
+            }
+        });
+        res.status(200).json({
+            ...medic,
+            ...req.body
+        });
+    }
 });
+
+
 
 
 // Gets all medics
@@ -238,76 +290,94 @@ router.get(['/medics', '/medics/:id'], async (req, res, next) => {
 });
 
 
-router.get('/users', express.json(), async (req, res, next) => {
+router.post(['/schedules'], async (req, res, next) => {
+    const {
+        office,
+        start_time,
+        end_time,
+    } = req.body;
+
+    const schedules = await prisma.schedule.create({
+        data: {
+            startTime: start_time,
+            endTime: end_time,
+            location: office,
+        },
+        select: {
+            sid: true,
+        }
+    }).catch((error) => {
+        res.status(500);
+        res.json(error);
+    });
+    res.status(200).json({
+        ...schedules,
+        ...req.body
+    });
+});
+
+router.post(['/schedules/apppointments'], async (req, res, next) => {
+    const {
+        schedule,
+        patient
+    } = req.body;
+    const appointments = await prisma.appointment.create({
+        data: {
+            schedule: schedule,
+            patient: patient,
+        },
+        select: {
+            aid: true
+        }
+    }).catch((error) => {
+        res.status(500);
+        res.json(error);
+    });
+    res.status(200).json({
+        ...appointments,
+        ...req.body
+    });
+});
+
+router.post('/offices', express.json(), async (req, res, next) => {
+    const {
+        phone,
+        name,
+        open_time,
+        close_time,
+        address
+    } = req.body;
+    const offices = await prisma.office.create({
+        data: {
+            phone_number: phone,
+            office_name: name,
+            open_time: open_time,
+            close_time: close_time
+
+        },
+        select: {
+            oid: true
+        }
+    }).catch((error) => {
+        res.status(500);
+        res.json(error);
+    });
+});
+
+
+// Top 25 - 100 appointed doctors
+router.get('/medics/top', express.json(), async (req, res, next) => {});
+
+router.get('/offices', express.json(), async (req, res, next) => {
     let {
         id,
         offset,
         limit
     } = req.query;
 
-    if (id === undefined) {
-        limit = limit || 20
-        offset = offset || 0
-        // get all users
-        const users = await prisma.user.findMany({
-            take: limit,
-            skip: offset,
-            select: {
-                uid: true,
-                first_name: true,
-                last_name: true
-            }
-        })
-        users.map((user) => {
-            user.url = `https://urhealth-api.herokuapp.com/api/users?=${user.uid}`
-        })
-        res.json(users)
-    } else {
-        const user = await prisma.user.findFirst({
-            where: {
-                uid: parseInt(id)
-            },
-            select: {
-                first_name: true,
-                last_name: true,
-                Login: {
-                    select: {
-                        email: true
-                    }
-                }
-            }
-        });
-        res.status(200).json(req.body)
-    }
+
 });
 
+// router.get('/medics/top', express.json(), )
 
 module.exports = router;
-
-
-// const createError = require('http-errors');
-
-// // use `prisma` in your application to read and write data in your DB
-// const prisma = new PrismaClient()
-// const app = express()
-
-// app.use(express.json())
-
-
-// app.listen
-
-
-
-
-// const newUser = await prisma.user.create{(
-
-// )}
-
-// const newUser = await prisma.user.create({
-//     data: {
-//         name: 'Alice',
-//         email: 'alice@prisma.io',
-//     },
-// })
-
-// const users = await prisma.

@@ -63,7 +63,7 @@ export const Portal2 = (props) => {
                             <td>No</td>
                                         
                             <input type="hidden" name="_token" value="tOCVbFlSUne96tRVFWBXdQLsxgkxqDM6YAuCBEmE"/>
-                            <input type="hidden" name="_method" value="DELETE"/>
+              ]              <input type="hidden" name="_method" value="DELETE"/>
                               
                             <button class="btn btn-default look-a-like"><FontAwesomeIcon icon={faTrash}/></button>
                             </tr>
